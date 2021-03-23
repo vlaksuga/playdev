@@ -5,6 +5,17 @@
     <li><a href="toon://open/176" ><h1>Click Here DEEP</h1></a></li>
     <li><a href="https://officialcopincomics.app.link"><h1>Click Here OFF</h1></a></li>
     <li><a href="https://officialcopincomics-alternate.app.link"><h1>Click Here ALT</h1></a></li>
+    <li>
+        <h1>
+            <a href="javascript:copin();">INTERFACE</a>
+        </h1>
+    </li>
   </ul>  
+
+  <script>
+      function copin() {
+        window.webkit.messageHandlers.test.postMessage('getMessage');
+      }
+  </script>
 </body>
 </html>
