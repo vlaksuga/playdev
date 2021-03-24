@@ -12,13 +12,14 @@
     </li>
         <li>
         <h1>
-          <a onclick="iosBridge(facebookLogin);">페이스북 로그인</a>
+          <a onclick="iosBridge(facebookLogin);">페이스북 로그인 + alert</a>
         </h1>
     </li>
   </ul>  
 
   <script>
       function iosBridge(v) {
+        alert(v);
         window.webkit.messageHandlers.iOSCopin.postMessage(v);
       }
   </script>
