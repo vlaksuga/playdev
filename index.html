@@ -7,7 +7,7 @@
     <li><a href="https://officialcopincomics-alternate.app.link"><h1>Click Here ALT</h1></a></li>
     <li>
         <h1>
-          <a onclick="iosBridge("googleLogin");">구글 로그인</a>
+          <a onclick="copin()">구글 로그인</a>
         </h1>
     </li>
         <li>
@@ -18,8 +18,8 @@
   </ul>  
 
   <script>
-      function iosBridge(v) {
-        window.webkit.messageHandlers.iOSCopin.postMessage(v);
+      function copin() {
+        window.webkit.messageHandlers.iOSCopin.postMessage("googleLogin");
       }
   </script>
 </body>
