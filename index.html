@@ -12,7 +12,7 @@
     </li>
         <li>
         <h1>
-          <a onclick="iosBridge(facebookLogin);">페이스북 로그인 + alert</a>
+          <a onclick="iosBridge("facebookLogin");">페이스북 로그인 dfs</a>
         </h1>
     </li>
   </ul>  
@@ -20,6 +20,9 @@
   <script>
       function copin() {
         window.webkit.messageHandlers.iOSCopin.postMessage("googleLogin");
+      }
+          function iosBridge(v) {
+        window.webkit.messageHandlers.iOSCopin.postMessage(v);
       }
   </script>
 </body>
