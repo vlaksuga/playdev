@@ -7,14 +7,19 @@
     <li><a href="https://officialcopincomics-alternate.app.link"><h1>Click Here ALT</h1></a></li>
     <li>
         <h1>
-          <a onclick="copin();">이번에는 제대로 되엉 합니</a>
+          <a onclick="iosBridge(googleLogin);">구글 로그인</a>
+        </h1>
+    </li>
+        <li>
+        <h1>
+          <a onclick="iosBridge(facebookLogin);">페이스북 로그인</a>
         </h1>
     </li>
   </ul>  
 
   <script>
-      function copin() {
-        window.webkit.messageHandlers.iOSCopin.postMessage('Rockteki is King');
+      function iosBridge(v) {
+        window.webkit.messageHandlers.iOSCopin.postMessage(v);
       }
   </script>
 </body>
