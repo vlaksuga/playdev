@@ -8,10 +8,10 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
-    
+
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
 
     <ul>
         <li>
@@ -40,32 +40,32 @@
     </script>
 </body>
 <script>
-function purchase1() {
+    function purchase1() {
 
-    const item_jeggings = {
-        item_id: 'SKU_123',
-        item_name: 'jeggings',
-        item_category: 'pants',
-        item_variant: 'black',
-        item_brand: 'Google',
-        price: 9.99
-      };
+        const item_jeggings = {
+            item_id: 'SKU_123',
+            item_name: 'jeggings',
+            item_category: 'pants',
+            item_variant: 'black',
+            item_brand: 'Google',
+            price: 9.99
+        };
 
-    // Prepare ecommerce bundle
-    const params10 = {
-        transaction_id: 'T12345',
-        affiliation: 'Rockteki',
-        currency: 'USD',
-        value: 1.99, // Total Revenue
-        tax: 0.0,
-        shipping: 0.0,
-        coupon: 'NO COUPON',
-        items: [item_jeggings]
-    };
+        // Prepare ecommerce bundle
+        const params10 = {
+            transaction_id: 'T12345',
+            affiliation: 'Rockteki',
+            currency: 'USD',
+            value: 1.99, // Total Revenue
+            tax: 0.0,
+            shipping: 0.0,
+            coupon: 'NO COUPON',
+            items: [item_jeggings]
+        };
 
-    // Log event
-    firebase.analytics().logEvent(firebase.analytics.EventName.PURCHASE, params10);
+        // Log event
+        firebase.analytics().logEvent(firebase.analytics.EventName.PURCHASE, params10);
+    }
 </script>
-}
 
 </html>
