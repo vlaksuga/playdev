@@ -1,45 +1,55 @@
 <!html>
-<head></head>
-<body>
-  <ul>
-    <li><a href="toon://open/112"><h1>Click Here 112 Epi List</h1></a></li>
-    <li><a href="toon://112"><h1>Click Here 112</h1></a></li>
-    <li><a href="toon://"><h1>Click Here None</h1></a></li>
-    <li><a href="https://officialcopincomics.app.link?avcc=0"><h1>Click Here OFFICIAL</h1></a></li>
-    <li><a href="https://officialcopincomics-alternate.app.link?dfsdf=0"><h1>Click Here ALTERNATIVE</h1></a></li>
-    <li>
+
+  <head></head>
+
+  <body>
+    <ul>
+      <li><a href="toon://open/112">
+          <h1>Click Here 112 Epi List</h1>
+        </a></li>
+      <li><a href="toon://112">
+          <h1>Click Here 112</h1>
+        </a></li>
+      <li><a href="toon://">
+          <h1>Click Here None</h1>
+        </a></li>
+      <li><a href="https://officialcopincomics.app.link?avcc=0">
+          <h1>Click Here OFFICIAL</h1>
+        </a></li>
+      <li><a href="https://officialcopincomics-alternate.app.link?dfsdf=0">
+          <h1>Click Here ALTERNATIVE</h1>
+        </a></li>
+      <li>
         <h1>
           <a onclick="copinLogin('googleLogin');">구글 로그인</a>
         </h1>
-    </li>
-    <li>
+      </li>
+      <li>
         <h1>
           <a onclick="copinLogin('facebookLogin');">페이스북 로그인</a>
         </h1>
-    </li>
-        <li>
+      </li>
+      <li>
         <h1>
           <a onclick="copinLogin('twitterLogin');">트위터 로그인</a>
         </h1>
-    </li>
-        </li>
-        <li>
+      </li>
+      </li>
+      <li>
         <h1>
           <a onclick="copinLogin('appleLogin');">애플 로그인</a>
         </h1>
-  </li>
       </li>
-        </li>
-        <li>
-        <h1>
-          <a onclick="copinLogin('{"a":"appleLogin","b":"test"}');">TEST JSON</a>
-        </h1>
-  </li>
-  </ul>  
-  <script>
-        function copinLogin(provider) {
+      </li>
+      </li>
+      <li>
+
+    </ul>
+    <script>
+      function copinLogin(provider) {
         window.webkit.messageHandlers.iOSCopin.postMessage(provider);
       }
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+
+  </html>
