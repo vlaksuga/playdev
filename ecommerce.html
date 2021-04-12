@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-
+    <script src="event.js"></script>
 </head>
 
 <body>
@@ -12,10 +12,34 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
-
+    <h4>E-COMMERCE EVENT TEST</h4>
     <ul>
         <li>
-            <a href="#" onclick="purchase();">TEST PURCHASE</p>
+            <a href="#" onclick="viewItemList();">STEP 0 - VIEW ITEM LIST</p>
+        </li>
+        <li>
+            <a href="#" onclick="selectItem();">STEP 1 - SELECT ITEM</p>
+        </li>
+        <li>
+            <a href="#" onclick="viewItem();">STEP 2 - VIEW ITEM</p>
+        </li>
+        <li>
+            <a href="#" onclick="addToWishList();">STEP 3-1 - ADD TO WISHLIST</p>
+        </li>
+        <li>
+            <a href="#" onclick="addToCart();">STEP 3-2 - ADD TO CART</p>
+        </li>
+        <li>
+            <a href="#" onclick="beginCheckOut();">STEP 4 - BEGIN CHECKOUT</p>
+        </li>
+        <li>
+            <a href="#" onclick="addShippingInfo();">STEP 5 - ADD SHIPPING INFO</p>
+        </li>
+        <li>
+            <a href="#" onclick="addPaymentInfo();">STEP 6 - ADD PAYMENT INFO</p>
+        </li>
+        <li>
+            <a href="#" onclick="purchase();">STEP 7 - PURCHASE</p>
         </li>
     </ul>
 
@@ -39,33 +63,5 @@
         firebase.analytics();
     </script>
 </body>
-<script>
-    function purchase() {
-
-        const item_jeggings = {
-            item_id: 'coin_id_01',
-            item_name: 'coin_01',
-            item_category: 'coin',
-            item_variant: 'none',
-            item_brand: 'Copin',
-            price: 1.99
-        };
-
-        // Prepare ecommerce bundle
-        const params10 = {
-            transaction_id: 'T12345',
-            affiliation: 'Rockteki',
-            currency: 'USD',
-            value: 1.99, // Total Revenue
-            tax: 0.0,
-            shipping: 0.0,
-            coupon: 'NO COUPON',
-            items: [item_jeggings]
-        };
-
-        // Log event
-        firebase.analytics().logEvent(firebase.analytics.EventName.PURCHASE, params10);
-    }
-</script>
 
 </html>
