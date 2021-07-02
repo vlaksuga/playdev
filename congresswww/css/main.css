@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+/* COMMON */
+*, html {font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 12px;}
+html { background-color: white }
+body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0; font-family: 'Roboto', sans-serif; background-color: white; position: relative; }
+div, dl, dt, dd, ul, ol, li, h1, h2, p, img { margin: 0; padding: 0; }
+img { border: 0; }
+a { text-decoration: none; }
+ul, ol { list-style: none; }
+::-webkit-scrollbar { display: none; }
+
+/* HEADER */
+header { width: 100%; height: 50px; }
+header .container { height: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 0 16px; }
+header .container .titleBox .title { font-weight: bold; line-height:1em}
+
+/* PARTY GRADIANT */
+.party-1 { background: linear-gradient(to right, #2980B9, #FFFFFF); }
+.party-2 { background: linear-gradient(to right, #c31432, #FFFFFF); }
+
+/* FORUM */
+section.head .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex; left: -320px; justify-content: space-between; align-items: flex-start; padding: 0 16px; transition: 0.7s ease-in-out;}
+section.head .container .memberThumb { position: relative; height: 100%; }
+section.head .container .memberThumb .infoBox { display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0; right: 0; width: 100%; padding: 6px; z-index: 99; }
+section.head .container .memberThumb .infoBox .memberLevel { width: 24px; padding: 0 4px; font-size: 10px; border-radius: 10px; background-color: white; text-align: center; font-weight: bold; color: black; }
+section.head .container .memberThumb .infoBox .partyIcon { width: 16px; height: 16px; }
+section.head .container .memberThumb .memberName { position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 24px; bottom: 0; right: 0; text-align: center; z-index: 99; border-radius: 0 0 10px 10px; color: gray; }
+section.head .container .memberThumb .memberName span { padding: 6px; font-weight: bold; }
+section.head .container .memberThumb .thumb { width: auto; height: 100%; border-radius: 10px; opacity: 0.8; }
+
+section.head .container .headInfo { display: flex; flex-direction: column; align-items: flex-start; font-weight: bold; padding: 16px 0; }
+section.head .container .headInfo .district { font-size: 10px; margin-bottom: 4px; }
+section.head .container .headInfo .watcherCounter { font-size: 10px; }
+section.head .container .headInfo .memberName { font-size: 18px; }
+
+section.board .container ul li { height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 16px; opacity: 0; transition: 0.3s ease-in-out;}
+section.board .container ul li:not(:last-child) { border-bottom: 1px solid lightgray; }
+section.board .container ul li .row1 .reply { color: turquoise;}
+section.board .container ul li .row2 { color: gray; font-size: 8px; font-weight: 100; }
+section.board .container ul li .row2 > span:not(:last-child)::after { content: ''; width: 1px; height: 8px; background-color: gray; margin: 0 7px; display: inline-block;}
+
+
+/* POST */
+section.contents { width: 100%; }
+section.contents .container { border-top: 1px solid lightgrey; border-bottom: 1px solid lightgrey; }
+section.contents .container .titleBox { padding: 0 16px; display: flex; justify-content: space-between; align-items: center;  border-bottom: 1px solid lightgray; height: 36px;}
+section.contents .container .titleBox .title { font-weight: bold; }
+section.contents .container .titleBox .writer { font-size: 10px; color: grey;}
+section.contents .container .articleBox { padding: 8px 16px; }
+section.contents .container .articleBox .info { display: flex; justify-content: flex-end; align-items: center; }
+section.contents .container .articleBox .info > div { display: flex; justify-content: center; align-items: center; }
+section.contents .container .articleBox .info > div:not(:last-child) { margin-right: 6px;}
+section.contents .container .articleBox .info img { width: 10px; height: 10px; margin-right: 4px;}
+section.contents .container .articleBox .info span { font-size: 10px; }
+section.contents .container .articleBox .article { min-height: 150px; margin-bottom: 30px;}
+section.contents .container .articleBox .response { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+section.contents .container .articleBox .response > div { display: flex; justify-content: center; align-items: center;  border-radius: 12px; padding: 2px 10px; margin: 8px 4px;}
+section.contents .container .articleBox .response .likeBox { background-color: turquoise; }
+section.contents .container .articleBox .response .dislikeBox { background-color: lightcoral; } 
+section.contents .container .articleBox .response img { width: 12px; height: 12px; margin-right: 4px; }
+section.contents .container .replyBox { min-height: 200px; margin: 4px; border: 1px solid lightgrey; padding: 12px; }
+section.contents .container .replyBox .thumb { display: flex; flex-direction: row; align-items: center; margin-bottom: 4px;}
+section.contents .container .replyBox .thumb img { width: 24px; height: 24px; }
+section.contents .container .replyBox .thumb span { font-size: 10px; color: grey;}
+section.contents .container .replyBox .reply .comment { min-height: 20px; max-width: 80%; border-radius: 0 12px 12px 12px; padding: 6px 12px; border: 1px solid lightgrey;}
+section.contents .container .replyBox .reply .comment span {font-size: 10px; }

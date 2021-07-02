@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <head>
-
+    <style>
+        *{font-family: 'Noto Sans KR', sans-serif;}
+        .epiviewloadingindicator { margin-bottom: 10px;}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
-<body>
-    <img class="xx" src="img/img01.jpg" alt="testimg">
-</body>
+<body style="background-color: #000;">
+    <div class="epiviewloadingindicator" style="display: none; height: 100px; text-align: center; color: white; background-color: black; padding-top: 80px;">Loading First Image</div>
+    <div class="epiviewloadingindicator type1" style="height: 100px; text-align: center; color: white; background-color: black; padding-top: 80px;">
+        <div class="title">Loading Image</div>
+        <div class="retry" onclick="pro()" style="display: none; border: 2px solid lightgray; border-radius: 16px; padding: 4px 8px; width: 64px; margin: 10px auto;">Retry</div>
+    </div>
 <script>
-    var image = document.querySelector('.xx');
-    image.onLoad = console.log('olx');
+
+    const DURATION = 30;
+    const START_TIMER_DELAY = 100;
+    const ERROR_POINT = 54;
+
+
+    /* type1 */
+    var title1 = document.querySelector('.type1 .title');
+    var retry = document.querySelector('.type1 .retry');
+    function pro(){
+        console.log('start');
+        retry.style.display = 'none'; 
+        for (let i=0; i<=44; i++) {
+            setTimeout(function(){    
+                title1.innerHTML = `Loading Image ${i}%`;
+                if (i == 44) {
+                    title1.innerHTML = 'Your internet connection is unstable. <br> Please try again!';
+                    retry.style.display = 'block';
+                }
+            }, i*DURATION + START_TIMER_DELAY)
+        }
+    }
+    
+    window.onload = pro();
 </script>
 </html>
