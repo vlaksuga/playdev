@@ -11,13 +11,32 @@ ul, ol { list-style: none; }
 ::-webkit-scrollbar { display: none; }
 
 /* HEADER */
-header { width: 100%; height: 50px; position: sticky;  top: 0; left: 0; background-color: white; z-index: 9999;}
+header { width: 100%; height: 50px; background-color: white; }
 header .container { height: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 0 16px; }
 header .container .titleBox .title { font-weight: bold; line-height:1em}
 
 /* PARTY GRADIANT */
 .party-1 { background: linear-gradient(to right, #2980B9, #FFFFFF); }
 .party-2 { background: linear-gradient(to right, #c31432, #FFFFFF); }
+
+/* FLOATING BUTTON */
+
+.fbBox > div { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 80px;  transition: 0.3s ease-in-out;}
+.fbBox > div .detail { font-size: 10px; color: gray; opacity: 0; transition: 0.5s ease-in-out;}
+.fbBox > div .btn {  background-color: lightgrey; display: flex; justify-content: center; align-items: center; padding: 8px; border-radius: 50%; opacity: 0; transition: 0.3s ease-in-out; box-shadow: 2px 3px 5px grey;} 
+.fbBox > div .btn img { width: 14px; height: 14px; }
+
+.fbBox .toggle { z-index: 9999; }
+.fbBox .toggle .btn { z-index: 999; opacity: 0.5; } 
+.fbBox .toggle .btn img { transition: 0.3s ease-in-out;}
+
+.fbBox.active > div .btn { opacity: 1; }
+.fbBox.active > div .btn  { background-color: orange; }
+ 
+.fbBox.active .toggle .btn img { transform: rotate(45deg) scale(1.5);}
+.fbBox.active .new { bottom: 64px;}
+.fbBox.active .search { bottom: 104px;}
+.fbBox.active .top { bottom: 144px;}
 
 /* FORUM */
 section.head .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex; left: -320px; justify-content: space-between; align-items: flex-start; padding: 0 16px; transition: 0.7s ease-in-out;}
@@ -34,26 +53,32 @@ section.head .container .headInfo .district { font-size: 10px; margin-bottom: 4p
 section.head .container .headInfo .watcherCounter { font-size: 10px; }
 section.head .container .headInfo .memberName { font-size: 18px; }
 
-section.board .container ul li { height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 16px; opacity: 0; transition: 0.3s ease-in-out;}
-section.board .container ul li:not(:last-child) { border-bottom: 1px solid #EFEFEF; }
-section.board .container ul li .row1 .reply { color: turquoise;}
-section.board .container ul li .row2 { color: gray; font-size: 8px; font-weight: 100; }
-section.board .container ul li .row2 > span:not(:last-child)::after { content: ''; width: 1px; height: 8px; background-color: gray; margin: 0 7px; display: inline-block;}
+section.board .container .list li { height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 16px; opacity: 0; transition: 0.3s ease-in-out;}
+section.board .container .list li:not(:last-child) { border-bottom: 1px solid #EFEFEF; }
+section.board .container .list li .row1 .reply { color: orange;}
+section.board .container .list li .row2 { color: gray; font-size: 8px; font-weight: 100; }
+section.board .container .list li .row2 > span:not(:last-child)::after { content: ''; width: 1px; height: 8px; background-color: gray; margin: 0 7px; display: inline-block;}
+
+section.board .container .pagenation { display: flex; flex-direction: row; justify-content: center; align-items: center; margin: 20px 0;}
+section.board .container .pagenation li { display: flex; justify-content: center; align-items: center; width: 24px; height: 24px; border: 1px solid lightgray; margin: 0 4px; font-size: 8px;}
 
 
 /* POST */
 section.contents { width: 100%; }
-section.contents .container .titleBox { padding: 0 16px; display: flex; justify-content: space-between; align-items: center;  border-bottom: 1px solid #EFEFEF; min-height: 36px;}
-section.contents .container .titleBox .title { font-weight: bold; }
+
+section.contents .container .navBox { padding: 16px; width: 100%; background-color: #EFEFEF;}
+section.contents .container .titleBox { padding: 0 16px; display: flex; justify-content: space-between; align-items: center;  border-bottom: 1px solid #EFEFEF; min-height: 36px; width: 100%;}
+section.contents .container .titleBox .title { font-weight: bold; width: 100%;}
 
 section.contents .container .articleBox { padding: 8px 16px; }
-section.contents .container .articleBox .info { display: flex; justify-content: flex-start; align-items: center; }
+section.contents .container .articleBox .info { display: flex; justify-content: flex-start; align-items: center; margin-bottom: 8px; }
 section.contents .container .articleBox .info > div { display: flex; justify-content: center; align-items: center; flex: 1;}
 section.contents .container .articleBox .info > div:first-child {flex: 8; justify-content: flex-start;}
 section.contents .container .articleBox .info > div:not(:last-child) { margin-right: 6px;}
 section.contents .container .articleBox .info img { width: 10px; height: 10px; margin-right: 4px;}
 section.contents .container .articleBox .info span { font-size: 10px; }
 section.contents .container .articleBox .article { min-height: 150px; margin-bottom: 30px;}
+section.contents .container .articleBox .article p img {width: 100%; height: auto;}
 section.contents .container .articleBox .response { display: flex; flex-direction: row; align-items: center; justify-content: center; }
 section.contents .container .articleBox .response > div { display: flex; justify-content: center; align-items: center;  border-radius: 12px; padding: 2px 10px; margin: 8px 4px;}
 section.contents .container .articleBox .response img { width: 12px; height: 12px; margin-right: 4px; }
@@ -62,8 +87,8 @@ section.contents .container .replyBox { background-color: #F4F4F4; padding: 6px 
 section.contents .container .replyBox .reply { display: flex; flex-direction: column; align-items: flex-start; padding: 16px; background-color: white;}
 section.contents .container .replyBox .reply .info { display: flex; flex-direction: row; align-items: center; margin-bottom: 12px;}
 section.contents .container .replyBox .reply .info .thumb { display: flex; justify-content: center; align-items: center;}
-section.contents .container .replyBox .reply .info .thumb img { width: 36px; height: 36px; }
-section.contents .container .replyBox .reply .info .detail { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-left: 4px; font-size: 10px; }
+section.contents .container .replyBox .reply .info .thumb img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid gray;}
+section.contents .container .replyBox .reply .info .detail { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-left: 8px; font-size: 10px; }
 section.contents .container .replyBox .reply .info .detail .writer { font-weight: bold; }
 section.contents .container .replyBox .reply .info .detail .createTime { color: gray;}
 section.contents .container .replyBox .reply .comment { margin-bottom: 12px; }
@@ -73,3 +98,7 @@ section.contents .container .replyBox .reply .response .likes div { display: fle
 section.contents .container .replyBox .reply .response .likes div:first-child { margin-right: 8px; }
 section.contents .container .replyBox .reply .response .likes img  { width: 12px; height: 12px; margin-right: 4px;}
 section.contents .container .replyBox ul li:not(:last-child) .reply { border-bottom: 1px solid #EFEFEF; }
+
+/* WRITE POST */
+input { border: none; }
+input:focus { outline: none;}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +8,12 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <script src="js/main.js"></script>
     <title>Congress :: Web</title>
 </head>
-
 <body>
     <header>
         <div class="container">
@@ -24,128 +21,31 @@
                 <span class="title">CONGRESS</span>
             </div>
             <div class="toolBox">
-                <img src="img/account_circle_black.svg">
+                <img src="../img/account_circle_black.svg">
             </div>
         </div>
     </header>
 
-    <main id="post">
-
-        <section class="contents">
-            <div class="container">
-
-                <div class="titleBox">
-                    <span class="title">제목의 영역입니다.</span>
+    <main id="forum">
+        <section class="head">
+            <div class="container party-1">
+                <div class="headInfo">
+                    <div class="district">서울 강서구갑</div>
+                    <div class="memberName">강선우</div>
                 </div>
-
-                <div class="articleBox">                    
-                    <div class="info">
-                        <div class="writer">
-                            <img src="img/account_circle_black.svg">
-                            <span>고구마살인마</span>
-                        </div>
-                        <div class="replyCount">
-                            <img src="img/question_answer_black.svg">
-                            <span>122</span>
-                        </div>
-                        <div class="createTime">
-                            <img src="img/schedule_black.svg">
-                            <span class="createTime">12:34:56</span>
-                        </div>
+                
+                <div class="memberThumb">
+                    <div class="infoBox">
+                        <img class="partyIcon" src="../img/partyicon1.svg">
                     </div>
-
-                    <div class="article">
-                        내용의 영역입니다.
-                    </div>
-
-                    <div class="response">
-                        <div class="likeBox">
-                            <img src="img/thumb_up_black.svg">
-                            <span>123</span>
-                        </div>
-                        <div class="dislikeBox">
-                            <img src="img/thumb_down_black.svg">
-                            <span>456</span>
-                        </div>
-                    </div>
+                    <img class="thumb" src="../img/member1.jpg">
                 </div>
-
-                <div class="replyBox">
-                    <ul>
-                        <li>                            
-                            <div class="reply">
-                                <div class="info">
-                                    <div class="thumb">
-                                        <img src="img/account_circle_black.svg">
-                                    </div>
-                                    <div class="detail">
-                                        <span class="writer">고구마살인마</span>
-                                        <span class="createTime">12:34:56</span>                                                                                
-                                    </div>                                    
-                                </div>
-                                <div class="comment">
-                                    <span>댓글을 이렇게 남겼습니다.</span>                                    
-                                </div>
-                                <div class="response">
-                                    <div class="replyCount">
-                                        <span>답글 122</span>
-                                    </div>
-                                    <div class="likes">
-                                        <div class="likeBox">
-                                            <img src="img/thumb_up_black.svg">
-                                            <span>123</span>
-                                        </div>
-                                        <div class="dislikeBox">
-                                            <img src="img/thumb_down_black.svg">
-                                            <span>456</span>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                            </div>
-                        </li>
-                        <li>                            
-                            <div class="reply">
-                                <div class="info">
-                                    <div class="thumb">
-                                        <img src="img/account_circle_black.svg">
-                                    </div>
-                                    <div class="detail">
-                                        <span class="writer">고구마살인마</span>
-                                        <span class="createTime">12:34:56</span>                                                                                
-                                    </div>                                    
-                                </div>
-                                <div class="comment">
-                                    <span>댓글을 이렇게 남겼습니다.</span>                                    
-                                </div>
-                                <div class="response">
-                                    <div class="replyCount">
-                                        <span>답글 122</span>
-                                    </div>
-                                    <div class="likes">
-                                        <div class="likeBox">
-                                            <img src="img/thumb_up_black.svg">
-                                            <span>123</span>
-                                        </div>
-                                        <div class="dislikeBox">
-                                            <img src="img/thumb_down_black.svg">
-                                            <span>456</span>
-                                        </div>
-                                    </div>
-                                </div>
-        
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
-
             </div>
         </section>
 
         <section class="board">
             <div class="container">
-                <ul>
+                <ul class="list">
                     <li>
                         <div class="row1">
                             <span class="title">제목이 들어가는 곳입니다.</span>
@@ -329,13 +229,63 @@
                         </div>
                     </li>
                 </ul>
+                <ul class="pagenation">
+                    <li></li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li></li>
+                </ul>
             </div>
         </section>
-
+        
     </main>
-    <footer>
 
-    </footer>
+    <div class="fbBox">
+
+        <div class="top">
+            <div class="detail">
+                <span>최상단</span>
+            </div>
+            <div class="btn">
+                <img src="../img/keyboard_arrow_up_black.svg">
+            </div>
+        </div>
+
+        <div class="search">
+            <div class="detail">
+                <span>찾기</span>
+            </div>
+            <div class="btn">
+                <img src="../img/search_black.svg">
+            </div>
+        </div>
+
+        <div class="new">
+            <div class="detail">
+                <span>글쓰기</span>
+            </div>
+            <div class="btn">
+                <img src="../img/edit_black.svg">
+            </div>
+        </div>
+
+
+        <div class="toggle">
+            <div class="detail">
+                <span>취소</span>
+            </div>
+            <div class="btn">
+                <img src="../img/add_black.svg">
+            </div>
+        </div>
+
+        
+        
+    </div>
+
 </body>
-
+<script src="../js/main.js"></script>
 </html>
