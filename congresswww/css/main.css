@@ -3,7 +3,7 @@
 /* COMMON */
 *, html {font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; -webkit-box-sizing: border-box; }
 html { background-color: white }
-body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0; font-family: 'Roboto', sans-serif; background-color: white; position: relative; }
+body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0;  background-color: white; position: relative; }
 div, dl, dt, dd, ul, ol, li, h1, h2, p, img { margin: 0; padding: 0; }
 img { border: 0; }
 a { text-decoration: none; }
@@ -23,8 +23,8 @@ header .container .titleBox .title { font-weight: bold; line-height:1em}
 
 .fbBox > div { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 80px;  transition: 0.3s ease-in-out;}
 .fbBox > div .detail { font-size: 10px; color: gray; opacity: 0; transition: 0.5s ease-in-out;}
-.fbBox > div .btn {  background-color: lightgrey; display: flex; justify-content: center; align-items: center; padding: 8px; border-radius: 50%; opacity: 0; transition: 0.3s ease-in-out; box-shadow: 2px 3px 5px grey;} 
-.fbBox > div .btn img { width: 14px; height: 14px; }
+.fbBox > div .btn {  background-color: lightgrey; display: flex; justify-content: center; align-items: center; padding: 12px; border-radius: 50%; opacity: 0; transition: 0.3s ease-in-out; box-shadow: 2px 3px 5px grey;} 
+.fbBox > div .btn img { width: 16px; height: 16px; }
 
 .fbBox .toggle { z-index: 9999; }
 .fbBox .toggle .btn { z-index: 999; opacity: 0.5; } 
@@ -34,9 +34,9 @@ header .container .titleBox .title { font-weight: bold; line-height:1em}
 .fbBox.active > div .btn  { background-color: orange; }
  
 .fbBox.active .toggle .btn img { transform: rotate(45deg) scale(1.5);}
-.fbBox.active .new { bottom: 64px;}
-.fbBox.active .search { bottom: 104px;}
-.fbBox.active .top { bottom: 144px;}
+.fbBox.active .new { bottom: 74px;}
+.fbBox.active .search { bottom: 124px;}
+.fbBox.active .top { bottom: 174px;}
 
 /* FORUM */
 section.head .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex; left: -320px; justify-content: space-between; align-items: flex-start; padding: 0 16px; transition: 0.7s ease-in-out;}
@@ -84,20 +84,28 @@ section.contents .container .articleBox .response > div { display: flex; justify
 section.contents .container .articleBox .response img { width: 12px; height: 12px; margin-right: 4px; }
 
 section.contents .container .replyBox { background-color: #F4F4F4; padding: 6px 0;}
-section.contents .container .replyBox .reply { display: flex; flex-direction: column; align-items: flex-start; padding: 16px; background-color: white;}
-section.contents .container .replyBox .reply .info { display: flex; flex-direction: row; align-items: center; margin-bottom: 12px;}
-section.contents .container .replyBox .reply .info .thumb { display: flex; justify-content: center; align-items: center;}
-section.contents .container .replyBox .reply .info .thumb img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid gray;}
-section.contents .container .replyBox .reply .info .detail { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-left: 8px; font-size: 10px; }
-section.contents .container .replyBox .reply .info .detail .writer { font-weight: bold; }
-section.contents .container .replyBox .reply .info .detail .createTime { color: gray;}
-section.contents .container .replyBox .reply .comment { margin-bottom: 12px; }
-section.contents .container .replyBox .reply .response { width: 100%; display: flex; justify-content: space-between; align-items: center; font-size: 10px; }
-section.contents .container .replyBox .reply .response .likes { display: flex; flex-direction: row; justify-content: center; justify-content: center; }
-section.contents .container .replyBox .reply .response .likes div { display: flex; flex-direction: row; justify-content: center; align-items: center;}
-section.contents .container .replyBox .reply .response .likes div:first-child { margin-right: 8px; }
-section.contents .container .replyBox .reply .response .likes img  { width: 12px; height: 12px; margin-right: 4px;}
-section.contents .container .replyBox ul li:not(:last-child) .reply { border-bottom: 1px solid #EFEFEF; }
+section.contents .container .replyBox .list .reply { display: flex; flex-direction: column; align-items: flex-start; padding: 16px; background-color: white;}
+section.contents .container .replyBox .list .reply .info { display: flex; flex-direction: row; align-items: center; margin-bottom: 12px;}
+section.contents .container .replyBox .list .reply .info .thumb { display: flex; justify-content: center; align-items: center;}
+section.contents .container .replyBox .list .reply .info .thumb img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid gray;}
+section.contents .container .replyBox .list .reply .info .detail { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin-left: 8px; font-size: 10px; }
+section.contents .container .replyBox .list .reply .info .detail .writer { font-weight: bold; }
+section.contents .container .replyBox .list .reply .info .detail .createTime { color: gray;}
+section.contents .container .replyBox .list .reply .comment { margin-bottom: 12px; }
+section.contents .container .replyBox .list .reply .response { width: 100%; display: flex; justify-content: space-between; align-items: center; font-size: 10px; }
+section.contents .container .replyBox .list .reply .response .likes { display: flex; flex-direction: row; justify-content: center; justify-content: center; }
+section.contents .container .replyBox .list .reply .response .likes div { display: flex; flex-direction: row; justify-content: center; align-items: center;}
+section.contents .container .replyBox .list .reply .response .likes div:first-child { margin-right: 8px; }
+section.contents .container .replyBox .list .reply .response .likes img  { width: 12px; height: 12px; margin-right: 4px;}
+section.contents .container .replyBox .list li:not(:last-child) .reply { border-bottom: 1px solid #EFEFEF; }
+
+
+section.contents .container .replyBox .writeReply { background-color: white; padding: 16px;}
+section.contents .container .replyBox .writeReply .inputBox textarea { resize: none; width: 100%; padding: 8px; border: 1px solid lightgrey;}
+section.contents .container .replyBox .writeReply .controlBox { display: flex; justify-content: space-between; align-items: center; flex-direction: row;}
+section.contents .container .replyBox .writeReply .controlBox .confirm { padding: 2px 8px; background-color: lightgrey;}
+
+
 
 /* WRITE POST */
 input { border: none; }
