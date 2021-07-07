@@ -18,38 +18,42 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="titleBox">
-                <span class="title">CONGRESS</span>
-            </div>
-            <div class="toolBox">
-                <img src="../img/account_circle_black.svg">
-            </div>
-        </div>
-    </header>
 
     <main id="writepost">
 
         <section class="contents">
             <div class="container">
 
+                <div class="navBox">
+                    <span>글쓰기</span>
+                    <img src="../img/add_black.svg" alt="cancel" style="transform: rotate(45deg);">
+                </div>
+
                 <div class="titleBox">
                     <input class="title" placeholder="제목을 입력하세요"></input>
                 </div>
 
                 <div class="articleBox">                    
+                    <textarea name="mypost" id="myArticle" cols="30" rows="20" placeholder="내용을 입력하세요"></textarea>
+                </div>
 
-                    <div class="article">
-                        내용의 영역입니다.
+                <div class="uploadBox">
+                    <div class="info">
+                        <span>파일첨부</span>
                     </div>
-
+                    <div class="buttons">
+                        <span>동영상</span>
+                        <span>이미지</span>
+                    </div>
                 </div>
 
-                <div class="controlBox">
-                    
+                <div class="outer">
+                    <div class="controlBox">
+                        <span class="count">0/1200</span>
+                        <span class="confirm">게시하기</span>
+                    </div>
                 </div>
-
+                
             </div>
         </section>
 

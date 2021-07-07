@@ -5,10 +5,11 @@
 html { background-color: white }
 body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0;  background-color: white; position: relative; }
 div, dl, dt, dd, ul, ol, li, h1, h2, p, img { margin: 0; padding: 0; }
-img { border: 0; }
+img { border: 0; display: block;}
 a { text-decoration: none; }
 ul, ol { list-style: none; }
 ::-webkit-scrollbar { display: none; }
+textarea { width: 100%; border: 1px solid lightgray; resize: none; padding: 8px;}
 
 /* HEADER */
 header { width: 100%; height: 50px; background-color: white; }
@@ -46,7 +47,7 @@ section.head .container .memberThumb .infoBox .memberLevel { width: 24px; paddin
 section.head .container .memberThumb .infoBox .partyIcon { width: 16px; height: 16px; }
 section.head .container .memberThumb .memberName { position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 24px; bottom: 0; right: 0; text-align: center; z-index: 99; border-radius: 0 0 10px 10px; color: gray; }
 section.head .container .memberThumb .memberName span { padding: 6px; font-weight: bold; }
-section.head .container .memberThumb .thumb { width: auto; height: 100%; border-radius: 10px; opacity: 0.8; }
+section.head .container .memberThumb .thumb { width: 93px; height: 130px; border-radius: 10px; }
 
 section.head .container .headInfo { display: flex; flex-direction: column; align-items: flex-start; font-weight: bold; padding: 16px 0; }
 section.head .container .headInfo .district { font-size: 10px; margin-bottom: 4px; }
@@ -66,7 +67,8 @@ section.board .container .pagenation li { display: flex; justify-content: center
 /* POST */
 section.contents { width: 100%; }
 
-section.contents .container .navBox { padding: 16px; width: 100%; background-color: #EFEFEF;}
+section.contents .container .navBox { padding: 16px; width: 100%; background-color: #EFEFEF; display: flex; justify-content: space-between; align-items: center;}
+
 section.contents .container .titleBox { padding: 0 16px; display: flex; justify-content: space-between; align-items: center;  border-bottom: 1px solid #EFEFEF; min-height: 36px; width: 100%;}
 section.contents .container .titleBox .title { font-weight: bold; width: 100%;}
 
@@ -82,6 +84,7 @@ section.contents .container .articleBox .article p img {width: 100%; height: aut
 section.contents .container .articleBox .response { display: flex; flex-direction: row; align-items: center; justify-content: center; }
 section.contents .container .articleBox .response > div { display: flex; justify-content: center; align-items: center;  border-radius: 12px; padding: 2px 10px; margin: 8px 4px;}
 section.contents .container .articleBox .response img { width: 12px; height: 12px; margin-right: 4px; }
+
 
 section.contents .container .replyBox { background-color: #F4F4F4; padding: 6px 0;}
 section.contents .container .replyBox .list .reply { display: flex; flex-direction: column; align-items: flex-start; padding: 16px; background-color: white;}
@@ -101,12 +104,23 @@ section.contents .container .replyBox .list li:not(:last-child) .reply { border-
 
 
 section.contents .container .replyBox .writeReply { background-color: white; padding: 16px;}
-section.contents .container .replyBox .writeReply .inputBox textarea { resize: none; width: 100%; padding: 8px; border: 1px solid lightgrey;}
-section.contents .container .replyBox .writeReply .controlBox { display: flex; justify-content: space-between; align-items: center; flex-direction: row;}
-section.contents .container .replyBox .writeReply .controlBox .confirm { padding: 2px 8px; background-color: lightgrey;}
+section.contents .container .controlBox { display: flex; justify-content: space-between; align-items: center; flex-direction: row; margin-top: 8px;}
 
+section.contents .container .uploadBox { display: flex; justify-content: space-between; align-items: center; padding: 0 16px;}
+section.contents .container .uploadBox .buttons { display: flex; justify-content: space-between; align-items: center; }
+section.contents .container .uploadBox .buttons > span { padding: 2px 8px; border: 1px solid lightgray; margin-left: 4px;}
+
+
+/* MEMBER */
+section.common { background-color: lightgray; }
+section.common .container { display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; padding: 16px;}
+section.common .container .thumb { margin-right: 16px;}
+section.common .container .thumb img { width: 93px; height: 130px; border-radius: 10px; }
+section.common .container .info { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;}
 
 
 /* WRITE POST */
 input { border: none; }
-input:focus { outline: none;}
+input:focus { outline: none; }
+.confirm { padding: 2px 8px; background-color: lightgrey; }
+.outer { padding: 0 16px; }
