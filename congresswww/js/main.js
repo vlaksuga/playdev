@@ -47,10 +47,11 @@ window.onload = function() {
         const numberOfDepth = 5;
         const numberOfSides = 5;
         const bgColor = "grey";
-        const statsColor = "orange";
+        const statsColor = "rgba(0,0,150,0.3)";
         const Xcenter = 150;
         const Ycenter = 150;
         const sizeGrowth = 20;
+        const statsLabel = ["", "A","B","C","D","E"]
         var stats = [0,8,7,8,6,4]
         
         /* DRAW POLYGON */
@@ -59,22 +60,25 @@ window.onload = function() {
             let size = i*sizeGrowth;
             ctx.moveTo (Xcenter +  size * Math.sin(0), Ycenter +  size *  Math.cos(0));            
             for (var ii = 1; ii <= numberOfSides; ii++) {
-                ctx.lineTo (Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));                
+                ctx.lineTo(Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));
+                ctx.fillText(i*2, Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));                                
             }
+
             ctx.strokeStyle = bgColor;
             ctx.lineWidth = i*0.2;            
-            ctx.stroke();
+            ctx.stroke();            
         }
 
         /* DRAW STATS */
-            ctx.beginPath();
-            ctx.moveTo (Xcenter +  sizeGrowth*5 * Math.sin(0), Ycenter +  sizeGrowth*5 *  Math.cos(0));
-            for (var j = 1; j <= numberOfSides; j++) {
-                ctx.lineTo (Xcenter + stats[j]/2 * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + stats[j]/2 * Math.cos(ii * 2 * Math.PI / numberOfSides));                
-            }
-            ctx.strokeStyle = statsColor;
-            ctx.lineWidth = 2;            
-            ctx.stroke();
+        ctx.beginPath();               
+        ctx.moveTo (Xcenter +  stats[j]/2*sizeGrowth * Math.sin(0), Ycenter +  stats[j]/2*sizeGrowth *  Math.cos(0));                    
+        for (var j = 1; j <= numberOfSides; j++) {                           
+            let size2 = stats[j]/2*sizeGrowth;      
+            ctx.lineTo (Xcenter + size2 * Math.sin(j * 2 * Math.PI / numberOfSides), Ycenter + size2 * Math.cos(j * 2 * Math.PI / numberOfSides));        
+        }        
+        ctx.fillStyle = statsColor;
+        ctx.lineWidth = 2;
+        ctx.fill();            
     }
     
 }
