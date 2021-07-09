@@ -10,6 +10,8 @@ a { text-decoration: none; }
 ul, ol { list-style: none; }
 ::-webkit-scrollbar { display: none; }
 textarea { width: 100%; border: 1px solid lightgray; resize: none; padding: 8px;}
+h3 { margin-left: 16px; margin-top: 36px; margin-bottom: 6px;}
+h3::after { content: ''; width: 30px; height: 2px; background-color: olivedrab;}
 
 /* HEADER */
 header { width: 100%; height: 50px; background-color: white; }
@@ -21,7 +23,6 @@ header .container .titleBox .title { font-weight: bold; line-height:1em}
 .party-2 { background: linear-gradient(to right, #c31432, #FFFFFF); }
 
 /* FLOATING BUTTON */
-
 .fbBox > div { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 80px;  transition: 0.3s ease-in-out;}
 .fbBox > div .detail { font-size: 10px; color: gray; opacity: 0; transition: 0.5s ease-in-out;}
 .fbBox > div .btn {  background-color: lightgrey; display: flex; justify-content: center; align-items: center; padding: 12px; border-radius: 50%; opacity: 0; transition: 0.3s ease-in-out; box-shadow: 2px 3px 5px grey;} 
@@ -38,6 +39,15 @@ header .container .titleBox .title { font-weight: bold; line-height:1em}
 .fbBox.active .new { bottom: 74px;}
 .fbBox.active .search { bottom: 124px;}
 .fbBox.active .top { bottom: 174px;}
+
+/* ENTRY */
+main#entry { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; background: linear-gradient(-45deg, #0088FF77, #0066DD77, #0044CC77, #0022BB77, #0000AA77); background-size: 400% 400%; animation: Gradient 5s ease infinite; }
+@keyframes Gradient {
+     0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+main#entry img { width: 48px; height: 48px; opacity: 0.4;}
 
 /* FORUM */
 section.head .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex; left: -320px; justify-content: space-between; align-items: flex-start; padding: 0 16px; transition: 0.7s ease-in-out;}
@@ -112,11 +122,36 @@ section.contents .container .uploadBox .buttons > span { padding: 2px 8px; borde
 
 
 /* MEMBER */
-section.common { background-color: lightgray; }
-section.common .container { display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; padding: 16px;}
-section.common .container .thumb { margin-right: 16px;}
-section.common .container .thumb img { width: 93px; height: 130px; border-radius: 10px; }
-section.common .container .info { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;}
+section.memberCard  { margin: 10px; }
+section.memberCard .container {background-color: #EFEFEF; padding: 16px;  border-radius: 10px; }
+section.memberCard .container .row1 { display: flex; flex-direction: row; justify-content: space-between; align-items: center; font-size: 10px; margin-bottom: 4px; color: gray;}
+section.memberCard .container .row2 { display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start;}
+section.memberCard .container .row2 .thumb { margin-right: 16px;}
+section.memberCard .container .row2 .thumb img { width: 93px; height: 130px; border-radius: 10px; }
+section.memberCard .container .row2 .infoBox { width: 100%; height: 130px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+section.memberCard .container .row2 .infoBox .title { width: 100%; font-size: 14px; display: flex; align-items: center; justify-content: center; padding: 8px; }
+section.memberCard .container .row2 .infoBox .title span { letter-spacing: 4px; font-weight: bold;}
+section.memberCard .container .row2 .infoBox .info { display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;}
+section.memberCard .container .row2 .infoBox .info span:not(:first-child) { font-size: 10px; }
+section.memberCard .container .row2 .infoBox .publish { width: 100%; display: flex; justify-content: space-between; align-items: center;  color:gray;} 
+section.memberCard .container .row2 .infoBox .publish .date { font-size: 8px; color: gray;}
+section.memberCard .container .row2 .infoBox .publish .publisher { letter-spacing: 2px;}
+
+section.tabView { border-top: 1px solid #EFEFEF; }
+section.tabView .tabBox { display: flex; flex-direction: row; justify-content: space-around; align-items: center;}
+section.tabView .tabBox .tab { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;  padding: 8px; color: lightgray; }
+section.tabView .tabBox .tab.active { color: black; font-weight: bold;}
+section.tabView .activeNav {width: 0%; background-color: lightskyblue; height: 3px; transition: 0.2s ease-in-out;}
+section.tabView .contentBox .content { padding: 16px; min-height: 200px;}
+section.tabView .contentBox .content:not(:first-child) { display: none; }
+section.tabView .contentBox .content ul li { line-height: 2em;}
+section.tabView .contentBox .content ul li::before {content: '- ';}
+
+/* BADGE */
+section.badge .badgeBox { display: flex; justify-content: flex-start; align-items: center; padding: 16px; overflow-x: scroll;}
+section.badge .badgeBox > div { border-radius: 50%; border: 2px solid gray; margin-right: 12px; padding: 12px; display: flex; justify-content: center; align-items: center; background-color: white;}
+section.badge .badgeBox > div:last-child {margin-right: 0;}
+section.badge .badgeBox > div img { width: 24px; height: 24px; }
 
 
 /* WRITE POST */
@@ -124,3 +159,6 @@ input { border: none; }
 input:focus { outline: none; }
 .confirm { padding: 2px 8px; background-color: lightgrey; }
 .outer { padding: 0 16px; }
+
+/* CANVAS */
+canvas#mycvs {width:300px; height:300px; border-radius: 10px; margin: 10px; background-color: #EFEFEF; }
