@@ -2,7 +2,9 @@
 let fbBox = document.querySelector('.fbBox');
 let fb_toggle = document.querySelector('.fbBox .toggle .btn');
 let fb_write = document.querySelector('.fbBox .new');
-let fb_top = document.querySelector('.fbBox .top')
+let fb_top = document.querySelector('.fbBox .top');
+let close_btn = document.querySelector('.closeBtn');
+let slide_panel = document.querySelector('.slidePanel');
 
 if(fb_toggle){
     fb_toggle.addEventListener('click', () => {
@@ -12,7 +14,7 @@ if(fb_toggle){
 
 if(fb_write){
     fb_write.addEventListener('click', () => {
-        location.href = 'writepost.html';
+         location.href = 'writepost.html';
     })
 }
 
@@ -23,17 +25,30 @@ if(fb_top) {
 }
 
 
-
 /* ON LOAD */
 window.onload = function() {
 
-    const head = document.querySelector('section.head .container');
+    const member = document.querySelector('section.member');
     const board = document.querySelectorAll('section.board .container ul li');
     const canvas = document.getElementById('mycvs');
     const tabview = document.getElementById('tabview');
 
+
     /* animation.js */
-    if (head) { window.setTimeout(function(){ head.style.left = '0px'; }, 500); }
+    if (member) { 
+        window.setTimeout(function(){ member.style.left = '0px'; }, 500);
+        member.addEventListener('click', () => {
+            if(slide_panel) {
+                slide_panel.style.right = '0px';
+                if(close_btn) {
+                    close_btn.addEventListener('click', () => {
+                        slide_panel.style.right = '-320px';
+                    })
+                }
+                
+            }
+        })
+     }
     if (board) {
         for(let i=0; i<board.length; i++) {
             window.setTimeout(() => { board[i].style.opacity = '1'; }, i*50 + 1000);
@@ -46,7 +61,7 @@ window.onload = function() {
         const numberOfDepth = 5;
         const numberOfSides = 5;
         const borderColor = "grey";
-        const statsColor = "#87CEFAAA";
+        const statsColor = "hsla(180, 50%, 80%, 80%)";
         const Xcenter = 450;
         const Ycenter = 450;
         const sizeGrowth = 60;
@@ -114,6 +129,31 @@ window.onload = function() {
                 conts[index].style.display = 'block';
             })
         });
+    }
+
+    /* mapper.js */
+    if('content' in document.createElement('template')) {
+        var t = document.querySelector('#teki');
+        var place = document.querySelector('ul.list');
+        var dummydata = [
+            {"memberpkey": 1, "membername":"강기윤", "dname":"경남 창원시 성산구"},
+            {"memberpkey": 2, "membername":"강대식", "dname":"대구 동구을"},
+            {"memberpkey": 3, "membername":"강득구", "dname":"경남 창원시 성산구"},
+            {"memberpkey": 4, "membername":"강민국", "dname":"경남 창원시 성산구"}]
+        for (i=0;i<5;i++) {
+            var clone = document.importNode(t.content, true);
+
+            mname = clone.querySelector('.name');
+            mname.innerText = dummydata[i].membername;
+
+            img = clone.querySelector('img');
+            img.src = `../img/member/member_${dummydata[i].memberpkey}.jpg`;
+
+            dname = clone.querySelector('.district');
+            dname.innerText = dummydata[i].dname;
+
+            place.appendChild(clone);
+        };
     }
 }
 

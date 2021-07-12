@@ -1,34 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
 
+:root {
+    /* color */
+    --main-bg-color: hsl(0, 0%, 100%);
+    --lighter-color: hsl(0, 0%, 95%);
+    --light-color: hsl(0, 0%, 80%);
+    --party-color-1: hsl(204, 64%, 44%);
+    --party-color-2: hsl(350, 81%, 42%);
+}
+
 /* COMMON */
 *, html {font-family: 'Noto Sans KR', sans-serif; box-sizing: border-box; -webkit-box-sizing: border-box; }
-html { background-color: white }
-body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0;  background-color: white; position: relative; }
+html { background-color: var(--main-bg-color); }
+body { width: 320px; min-height: 100vh; -webkit-text-size-adjust: none; -webkit-overflow-scrolling: touch; font-size: small; line-height: 1.5em; padding: 0; margin: 0;  background-color:  ; position: relative; }
 div, dl, dt, dd, ul, ol, li, h1, h2, p, img { margin: 0; padding: 0; }
 img { border: 0; display: block;}
 a { text-decoration: none; }
 ul, ol { list-style: none; }
 ::-webkit-scrollbar { display: none; }
-textarea { width: 100%; border: 1px solid lightgray; resize: none; padding: 8px;}
+textarea { width: 100%; border: 1px solid var(--light-color); resize: none; padding: 8px;}
 h3 { margin-left: 16px; margin-top: 36px; margin-bottom: 6px;}
 h3::after { content: ''; width: 30px; height: 2px; background-color: olivedrab;}
 
 /* HEADER */
-header { width: 100%; height: 50px; background-color: white; }
+header { width: 100%; height: 50px; background-color: white; position: fixed; top: 0px; left: 0px;}
 header .container { height: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 0 16px; }
-header .container .titleBox .title { font-weight: bold; line-height:1em}
+header .container .titleBox .title { font-weight: bold; font-size: 18px; line-height:1em}
+header .container .toolBox {display: flex; justify-content: flex-end; align-items: center;}
+header .container .toolBox img { width: 24px; height: 24px;}
+header .container .toolBox img:not(:last-child) {margin-right: 10px;}
 
 /* PARTY GRADIANT */
-.party-1 { background: linear-gradient(to right, #2980B9, #FFFFFF); }
-.party-2 { background: linear-gradient(to right, #c31432, #FFFFFF); }
+.party-1 { background-color: var(--party-color-1) }
+.party-2 { background-color: var(--party-color-2) }
 
 /* FLOATING BUTTON */
-.fbBox > div { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 80px;  transition: 0.3s ease-in-out;}
+.fbBox > div { position: fixed; bottom: 24px; right: 24px; z-index: 99; display: flex; flex-direction: row; justify-content: space-between; align-items: center; width: 80px;  transition: 0.3s ease-in-out;}
 .fbBox > div .detail { font-size: 10px; color: gray; opacity: 0; transition: 0.5s ease-in-out;}
 .fbBox > div .btn {  background-color: lightgrey; display: flex; justify-content: center; align-items: center; padding: 12px; border-radius: 50%; opacity: 0; transition: 0.3s ease-in-out; box-shadow: 2px 3px 5px grey;} 
 .fbBox > div .btn img { width: 16px; height: 16px; }
 
-.fbBox .toggle { z-index: 9999; }
+.fbBox .toggle { z-index: 999; }
 .fbBox .toggle .btn { z-index: 999; opacity: 0.5; } 
 .fbBox .toggle .btn img { transition: 0.3s ease-in-out;}
 
@@ -40,6 +52,9 @@ header .container .titleBox .title { font-weight: bold; line-height:1em}
 .fbBox.active .search { bottom: 124px;}
 .fbBox.active .top { bottom: 174px;}
 
+/* SLIDE PANEL */
+.slidePanel { width: 100vw; height: 100%; position: fixed; top:0px; right: -320px; transition: 0.5s ease-in-out; z-index: 9999; background-color: hsl(0, 100%, 100%);}
+
 /* ENTRY */
 main#entry { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; background: linear-gradient(-45deg, #0088FF77, #0066DD77, #0044CC77, #0022BB77, #0000AA77); background-size: 400% 400%; animation: Gradient 5s ease infinite; }
 @keyframes Gradient {
@@ -50,19 +65,28 @@ main#entry { width: 100%; height: 100vh; display: flex; justify-content: center;
 main#entry img { width: 48px; height: 48px; opacity: 0.4;}
 
 /* FORUM */
-section.head .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex; left: -320px; justify-content: space-between; align-items: flex-start; padding: 0 16px; transition: 0.7s ease-in-out;}
-section.head .container .memberThumb { position: relative; height: 100%; }
-section.head .container .memberThumb .infoBox { display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0; right: 0; width: 100%; padding: 6px; z-index: 99; }
-section.head .container .memberThumb .infoBox .memberLevel { width: 24px; padding: 0 4px; font-size: 10px; border-radius: 10px; background-color: white; text-align: center; font-weight: bold; color: black; }
-section.head .container .memberThumb .infoBox .partyIcon { width: 16px; height: 16px; }
-section.head .container .memberThumb .memberName { position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; height: 24px; bottom: 0; right: 0; text-align: center; z-index: 99; border-radius: 0 0 10px 10px; color: gray; }
-section.head .container .memberThumb .memberName span { padding: 6px; font-weight: bold; }
-section.head .container .memberThumb .thumb { width: 93px; height: 130px; border-radius: 10px; }
+section.member {position: relative; left: -320px; transition: 0.7s ease-in-out; }
+section.member .container { width: 100%; height: 130px; position: relative; color: white; font-weight: bold; display: flex;  justify-content: flex-start; align-items: flex-start; padding: 0 16px;}
 
-section.head .container .headInfo { display: flex; flex-direction: column; align-items: flex-start; font-weight: bold; padding: 16px 0; }
-section.head .container .headInfo .district { font-size: 10px; margin-bottom: 4px; }
-section.head .container .headInfo .watcherCounter { font-size: 10px; }
-section.head .container .headInfo .memberName { font-size: 18px; }
+/* MEMBERS */
+main#members {padding-top: 50px;}
+section.memberList .list { display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch;}
+section.memberList .list .member { width: 100%; height: 50px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; }
+section.memberList .list .member .thumb { margin: 5px 16px; width: 40px; height: 40px; }
+section.memberList .list .member .thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 1px solid var(--lighter-color);}
+section.memberList .list .member .info { display: flex; flex-direction: column; justify-content: center; align-items: flex-start;}
+section.memberList .list .member .info .district {color: var(--light-color); font-size: 10px;}
+
+/* MEMBER 1 */
+section.member .container .memberThumb { position: relative; height: 100%; }
+section.member .container .memberThumb .thumb { width: 93px; height: 130px;}
+
+section.member .container .memberInfo { display: flex; flex-direction: column; align-items: flex-start; font-weight: bold; padding: 16px; }
+section.member .container .memberInfo .infoBox { font-size: 10px; margin-bottom: 8px;}
+section.member .container .memberInfo .memberName { font-size: 22px; margin-bottom: 8px;}
+section.member .bgIcon {position: absolute; top: 25px; right: 40px; width: 80px; height: 80px;}
+section.member .bgIcon img { width: 100%; height: 100%; opacity: 0.2;}
+
 
 section.board .container .list li { height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 16px; opacity: 0; transition: 0.3s ease-in-out;}
 section.board .container .list li:not(:last-child) { border-bottom: 1px solid #EFEFEF; }
@@ -141,11 +165,11 @@ section.tabView { border-top: 1px solid #EFEFEF; }
 section.tabView .tabBox { display: flex; flex-direction: row; justify-content: space-around; align-items: center;}
 section.tabView .tabBox .tab { width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;  padding: 8px; color: lightgray; }
 section.tabView .tabBox .tab.active { color: black; font-weight: bold;}
+section.tabView .tabBox .tab img { width: 16px; height: 16px;}
 section.tabView .activeNav {width: 0%; background-color: lightskyblue; height: 3px; transition: 0.2s ease-in-out;}
-section.tabView .contentBox .content { padding: 16px; min-height: 200px;}
+section.tabView .contentBox .content { min-height: 200px;}
 section.tabView .contentBox .content:not(:first-child) { display: none; }
 section.tabView .contentBox .content ul li { line-height: 2em;}
-section.tabView .contentBox .content ul li::before {content: '- ';}
 
 /* BADGE */
 section.badge .badgeBox { display: flex; justify-content: flex-start; align-items: center; padding: 16px; overflow-x: scroll;}
@@ -161,4 +185,8 @@ input:focus { outline: none; }
 .outer { padding: 0 16px; }
 
 /* CANVAS */
-canvas#mycvs {width:300px; height:300px; border-radius: 10px; margin: 10px; background-color: #EFEFEF; }
+canvas#mycvs {width:320px; height:320px;}
+
+/* GNB */
+nav.gnb { display: flex; flex-direction: row; justify-content: space-around; align-items: center; background-color: var(--lighter-color); position: fixed; bottom: 0px; left: 0px; width: 100vw; height: 50px;}
+nav.gnb > img { width: 24px; height: 24px;}

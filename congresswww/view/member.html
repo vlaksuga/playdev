@@ -15,56 +15,58 @@
     <title>Congress :: Web</title>
 </head>
 <body>
+
     <header>
         <div class="container">
             <div class="titleBox">
-                <span class="title">CONGRESS</span>
+                <span class="title">강선우</span>
             </div>
             <div class="toolBox">
-                <img src="../img/account_circle_black.svg">
+                <img class="closeBtn" src="../img/add_black.svg" style="transform: rotate(45deg);">
             </div>
         </div>
     </header>
 
     <main id="member">
-        <section class="memberCard">
-            <div class="container">
-                <div class="row1">
-                    <div class="kind">
-                        <span>초선</span>
-                        <span>지역구</span>
-                    </div>
-                    <div class="pkey">
-                        <span>CGX21001</span>
-                    </div>
+
+        <section id='tabview' class="tabView">
+            <div class="tabBox">
+                <div class="tab">
+                    <img src="../img/pie_chart_black.svg" alt="chart">
                 </div>
-                <div class="row2">
-                    <div class="thumb">
-                        <img src="../img/member1.jpg" alt="member">
-                    </div>
-                    <div class="infoBox">
-                        <div class="title">
-                            <span>국회의원자격증</span>
-                        </div>
-                        <div class="info">
-                            <span>강선우</span>
-                            <span>서울 강서구갑</span>
-                            <span>더불어민주당</span>
-                        </div>
-                        <div class="publish">
-                            <span class="date">2021.9.1</span>
-                            <span class="publisher"> 국회감시단장 </span>
-                        </div>
-                    </div>
-                    
+                <div class="tab">
+                    <img src="../img/school_black.svg" alt="school">
+                </div>
+                <div class="tab">
+                    <img src="../img/info_black.svg" alt="info">
                 </div>
             </div>
-        </section>
 
-        <section class="chart">
-            <h3>통계 도표</h3>
-            <canvas id="mycvs" width="900" height="900" >
-            </canvas>
+            <div class="activeNav"></div>
+
+            <div class="contentBox">
+                <div class="content">
+                    <canvas id="mycvs" width="900" height="900" >
+                    </canvas>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>이화여자대학교 사범대학 영어교육학과 학사</li>
+                        <li>이화여자대학교 대학원 소비자인간발달학과 석사</li>
+                        <li>미국 위스콘신대학교 매디슨 캠퍼스 인간발달 및 가족학 박사</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>(현) 국회 보건복지위원회 위원</li>
+                        <li>(전) 더불어민주당 대변인</li>
+                        <li>(전) 더불어민주당 원내부대표</li>
+                        <li>(전) 대통령 직속 국가교육회의 전문위원</li>
+                        <li>(전) 미국 사우스다코타주립대학교 조교수</li>
+                    </ul>
+                </div>
+                
+            </div>
         </section>
 
         <section class="badge">
@@ -78,42 +80,9 @@
                 <div><img src="../img/comm3.svg"></div>
             </div>
         </section>
+        
 
-        <section id='tabview' class="tabView">
-            <h3>자세한 정보</h3>
-                <div class="tabBox">
-                    <div class="tab active">학력</div>
-                    <div class="tab">약력</div>
-                    <div class="tab">의원이력</div>
-                </div>
-                <div class="activeNav"></div>
-                <div class="contentBox">
-                    <div class="content">
-                        <ul>
-                            <li>이화여자대학교 사범대학 영어교육학과 학사</li>
-                            <li>이화여자대학교 대학원 소비자인간발달학과 석사</li>
-                            <li>미국 위스콘신대학교 매디슨 캠퍼스 인간발달 및 가족학 박사</li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>(현) 국회 보건복지위원회 위원</li>
-                            <li>(전) 더불어민주당 대변인</li>
-                            <li>(전) 더불어민주당 원내부대표</li>
-                            <li>(전) 대통령 직속 국가교육회의 전문위원</li>
-                            <li>(전) 미국 사우스다코타주립대학교 조교수</li>
-                        </ul>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li>
-                                제21대 더불어민주당 서울 강서구갑
-                            </li>
-                        </ul>
-                    </div> 
-                </div>
-            
-        </section>
+        
     </main>
 
 </body>

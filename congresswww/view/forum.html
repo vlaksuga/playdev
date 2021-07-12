@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <title>Congress :: Web</title>
 </head>
+
 <body>
+
     <header>
         <div class="container">
             <div class="titleBox">
@@ -27,21 +30,33 @@
     </header>
 
     <main id="forum">
-        <section class="head">
+
+        <section class="member">
             <div class="container party-1">
-                <div class="headInfo">
-                    <div class="district">서울 강서구갑</div>
-                    <div class="memberName">강선우</div>
-                </div>
-                
                 <div class="memberThumb">
+                    <img class="thumb" src="../img/member/m001.png">
+                </div>
+
+                <div class="memberInfo">
                     <div class="infoBox">
-                        <img class="partyIcon" src="../img/partyicon1.svg">
+                        <span class="district">서울 강서구갑</span>
+                        <span class="party">| 더불어민주당</span>
                     </div>
-                    <img class="thumb" src="../img/member1.jpg">
+                    <span class="memberName">강선우</span>
+                    <div class="infoBox">
+                        <span class="committee">예산결산특별위원회, 보건복지위원회</span>
+                    </div>
                 </div>
             </div>
+            <div class="bgIcon">
+                <img src="../img/partyicon1.svg">
+            </div>
+            <div class="linkTo">
+                <span></span>
+            </div>
         </section>
+
+        
 
         <section class="board">
             <div class="container">
@@ -240,9 +255,12 @@
                 </ul>
             </div>
         </section>
+
         
+
     </main>
 
+    <!-- floating button -->
     <div class="fbBox">
 
         <div class="top">
@@ -282,10 +300,83 @@
             </div>
         </div>
 
-        
-        
+
+
+    </div>
+
+    <!-- sliding panel -->
+    <div id="slideInfo" class="slidePanel">
+
+        <header >
+            <div class="container">
+                <div class="titleBox">
+                    <span class="title">INFO</span>
+                </div>
+                <div class="toolBox">
+                    <img class="closeBtn" src="../img/add_black.svg" style="transform: rotate(45deg);">
+                </div>
+            </div>
+        </header >
+    
+        <main id="member">
+    
+            <section id='tabview' class="tabView">
+                <div class="tabBox">
+                    <div class="tab">
+                        <img src="../img/pie_chart_black.svg" alt="chart">
+                    </div>
+                    <div class="tab">
+                        <img src="../img/school_black.svg" alt="school">
+                    </div>
+                    <div class="tab">
+                        <img src="../img/info_black.svg" alt="info">
+                    </div>
+                </div>
+    
+                <div class="activeNav"></div>
+    
+                <div class="contentBox">
+                    <div class="content">
+                        <canvas id="mycvs" width="900" height="900" >
+                        </canvas>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>이화여자대학교 사범대학 영어교육학과 학사</li>
+                            <li>이화여자대학교 대학원 소비자인간발달학과 석사</li>
+                            <li>미국 위스콘신대학교 매디슨 캠퍼스 인간발달 및 가족학 박사</li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>(현) 국회 보건복지위원회 위원</li>
+                            <li>(전) 더불어민주당 대변인</li>
+                            <li>(전) 더불어민주당 원내부대표</li>
+                            <li>(전) 대통령 직속 국가교육회의 전문위원</li>
+                            <li>(전) 미국 사우스다코타주립대학교 조교수</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </section>
+    
+            <section class="badge">
+                <h3>획득한 휘장</h3>
+                <div class="badgeBox">
+                    <div><img src="../img/comm1.svg"></div>
+                    <div><img src="../img/comm2.svg"></div>
+                    <div><img src="../img/comm3.svg"></div>
+                    <div><img src="../img/comm1.svg"></div>
+                    <div><img src="../img/comm2.svg"></div>
+                    <div><img src="../img/comm3.svg"></div>
+                </div>
+            </section>        
+        </main>
+
     </div>
 
 </body>
 <script src="../js/main.js"></script>
+
+</html>
 </html>
