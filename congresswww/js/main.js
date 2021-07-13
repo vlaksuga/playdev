@@ -5,6 +5,8 @@ let fb_write = document.querySelector('.fbBox .new');
 let fb_top = document.querySelector('.fbBox .top');
 let close_btn = document.querySelector('.closeBtn');
 let slide_panel = document.querySelector('.slidePanel');
+let tabview = document.getElementById('tabview');
+
 
 if(fb_toggle){
     fb_toggle.addEventListener('click', () => {
@@ -30,8 +32,6 @@ window.onload = function() {
 
     const member = document.querySelector('section.member');
     const board = document.querySelectorAll('section.board .container ul li');
-   
-    const tabview = document.getElementById('tabview');
 
 
     /* animation.js */
@@ -49,6 +49,7 @@ window.onload = function() {
             }
         })
      }
+
     if (board) {
         for(let i=0; i<board.length; i++) {
             window.setTimeout(() => { board[i].style.opacity = '1'; }, i*50 + 1000);
@@ -58,32 +59,34 @@ window.onload = function() {
     
     
     /* tabview.js */
-    if(tabview) {
-        const tabBox = document.querySelector('#tabview .tabBox');
-        const contentBox = document.querySelector('#tabview .contentBox');
-        const activeNav = document.querySelector('.activeNav');
-
-        let tabs = Array.from(tabBox.children);
-        let conts = Array.from(contentBox.children);
-        let tabCount = tabBox.childElementCount;
-        let navWidth = 100 / tabCount;
-
-        /* set bar init width */
-        activeNav.style.width =  `${navWidth}%`
-
-        /* add listener */
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(e => {e.classList.remove('active')});
-                conts.forEach(c => {c.style.display = 'none'});
-                tab.classList.add('active');
-                let index = Array.from(tab.parentElement.children).indexOf(tab);
-                activeNav.style.transform = `translate3d(${navWidth*index}vw,0,0)`;
-                conts[index].style.display = 'block';
-            })
-        });
-    }
     
+    
+}
+
+if(tabview) {
+    const tabBox = document.querySelector('#tabview .tabBox');
+    const contentBox = document.querySelector('#tabview .contentBox');
+    const activeNav = document.querySelector('.activeNav');
+
+    let tabs = Array.from(tabBox.children);
+    let conts = Array.from(contentBox.children);
+    let tabCount = tabBox.childElementCount;
+    let navWidth = 100 / tabCount;
+
+    /* set bar init width */
+    activeNav.style.width =  `${navWidth}%`
+
+    /* add listener */
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(e => {e.classList.remove('active')});
+            conts.forEach(c => {c.style.display = 'none'});
+            tab.classList.add('active');
+            let index = Array.from(tab.parentElement.children).indexOf(tab);
+            activeNav.style.transform = `translate3d(${navWidth*index}vw,0,0)`;
+            conts[index].style.display = 'block';
+        })
+    });
 }
 
 

@@ -302,12 +302,16 @@ if('content' in document.createElement('template')) {
     {"memberpkey":299,"version":21,"membername":"황운하","party":"더불어민주당","committee":"산업통상자원중소벤처기업위원회","district":"대전 중구","sex":0,"level":1,"kind":0},
     {"memberpkey":300,"version":21,"membername":"황희","party":"더불어민주당","committee":"국방위원회","district":"서울 양천구갑","sex":0,"level":2,"kind":0}]
     
+    function showMember(member) {
+        console.log(member)
+    }
+
     function updateData(keyword) {
         /* data select */
         var sdata = []
         if(keyword) {
             sdata = dummydata
-            .filter((item) => {
+            .filter(item => {
                 return (
                     item.membername.includes(keyword) ||
                     item.district.includes(keyword)
@@ -316,17 +320,19 @@ if('content' in document.createElement('template')) {
         } else {
             sdata = dummydata;
         }
-        console.log(sdata);
-        for (i=0;i<sdata.length;i++) {
+        
+        /* update selected data */
+        for (let i=0; i<sdata.length; i++) {
             var clone = document.importNode(t.content, true);
+
+            member = clone.querySelector('.member');
+            member.addEventListener('click', function(){showMember(sdata[i])})
         
             mname = clone.querySelector('.name');
             mname.innerText = sdata[i].membername;
         
             img = clone.querySelector('img');
-            img.onerror = function() {
-            this.src = "../img/account_circle_black.svg"
-            };
+            img.onerror = function() { this.src = "../img/account_circle_black.svg" };
                 // img.src = `../img/member/member_${dummydata[i].memberpkey}.jpg`; // local img src
             img.src = `https://chacha-image.s3.ap-northeast-2.amazonaws.com/member/member_${sdata[i].memberpkey}.jpg`;
                 
@@ -337,21 +343,12 @@ if('content' in document.createElement('template')) {
         };     
     }
 
-    updateData();
+    
 
     let search = document.querySelector('#search');
     let icon_search = document.querySelector('.iconSearch');
+    let icon_close = document.querySelector('.closeBtn');
     let h = document.querySelector('header');
-
-    if(icon_search) {
-        icon_search.addEventListener('click', e => {
-            h.classList.toggle('search');
-        })
-    }
-
-    if(search) {
-        search.addEventListener('input', updateValue)
-    }
 
     function updateValue(e){
         while (place.hasChildNodes()) {
@@ -360,5 +357,26 @@ if('content' in document.createElement('template')) {
         updateData(e.target.value);
     }
 
+    if(search) {
+        search.addEventListener('input', updateValue)
+
+        if(icon_search) {
+            icon_search.addEventListener('click', () => {
+                h.classList.add('search');
+                search.value = '';
+                search.focus();
+            })
+            icon_close.addEventListener('click', () => {
+                h.classList.remove('search');
+                while (place.hasChildNodes()) {
+                    place.removeChild(place.firstChild);
+                }
+                updateData();
+            })
+        }
+    }
+
     
+
+    updateData();
 }
