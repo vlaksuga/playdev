@@ -24,20 +24,27 @@
                 <span class="title">의원</span>
             </div>
             <div class="toolBox">
-                <img src="../img/search_black.svg" alt="search">
-                <img src="../img/account_circle_black.svg" alt="mypage">
+                <img class="iconSearch" src="../img/search_black.svg" alt="search">
+                <img class="iconAccount" src="../img/account_circle_black.svg" alt="mypage">
+            </div>
+            <div class="searchBox">
+                <input type="text" id="search" placeholder="검색어를 입력해주세요" autocomplete="off">
             </div>
         </div>
     </header>
 
     <main id="members">
-        <section class="memberList">
-            <ul class="list">
-                
+        <section class="memberList"> 
+            <ul class="list"><!-- place -->
+               <!-- here --> 
             </ul>
         </section>
     </main>
-    <template id="teki">
+
+
+
+    <!-- template 'memberList' -->
+    <template id="memberList">
         <li class="member">
             <div class="thumb">
                 <img src="../img/member/member001.jpg" alt="member">
@@ -56,7 +63,9 @@
     </nav>
 
 </body>
+
 <script src="../js/main.js"></script>
+<script src="../js/mapper.js"></script>
 
 </html>
 

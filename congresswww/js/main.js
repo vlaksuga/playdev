@@ -30,7 +30,7 @@ window.onload = function() {
 
     const member = document.querySelector('section.member');
     const board = document.querySelectorAll('section.board .container ul li');
-    const canvas = document.getElementById('mycvs');
+   
     const tabview = document.getElementById('tabview');
 
 
@@ -55,54 +55,7 @@ window.onload = function() {
         }
     }
 
-    /* polygon.js */
-    if(canvas) {
-        var ctx = canvas.getContext('2d');
-        const numberOfDepth = 5;
-        const numberOfSides = 5;
-        const borderColor = "grey";
-        const statsColor = "hsla(180, 50%, 80%, 80%)";
-        const Xcenter = 450;
-        const Ycenter = 450;
-        const sizeGrowth = 60;
-        const statsLabel = ["", "출석","재산","대표발의","범죄","의정"]
-        var stats = [0,8,7,8,6,4]
-        
-        /* DRAW POLYGON */
-        for (var i = 1; i <= numberOfDepth+1; i++) {
-            let size = i*sizeGrowth;
-            ctx.beginPath();
-            ctx.font = "30px 'Noto Sans Kr'";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.moveTo (Xcenter +  size * Math.sin(0), Ycenter +  size *  Math.cos(0));
-            if(i==numberOfDepth+1) {
-                for (var ii = 1; ii <= numberOfSides; ii++) { 
-                    ctx.lineTo(Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));
-                    ctx.fillText(statsLabel[ii], Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));                             
-                }
-                ctx.closePath();
-            } else {
-                for (var ii = 1; ii <= numberOfSides; ii++) { 
-                    ctx.lineTo(Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));
-                    ctx.fillText(i*2, Xcenter + size * Math.sin(ii * 2 * Math.PI / numberOfSides), Ycenter + size * Math.cos(ii * 2 * Math.PI / numberOfSides));                             
-                }
-                ctx.strokeStyle = borderColor;
-                ctx.lineWidth = i*0.6;
-                ctx.stroke();
-            }                      
-        }
-
-        /* DRAW STATS */
-        ctx.beginPath();               
-        ctx.moveTo (Xcenter +  stats[j]/2*sizeGrowth * Math.sin(0), Ycenter +  stats[j]/2*sizeGrowth *  Math.cos(0));                    
-        for (var j = 1; j <= numberOfSides; j++) {                           
-            let size2 = stats[j]/2*sizeGrowth;      
-            ctx.lineTo (Xcenter + size2 * Math.sin(j * 2 * Math.PI / numberOfSides), Ycenter + size2 * Math.cos(j * 2 * Math.PI / numberOfSides));        
-        }        
-        ctx.fillStyle = statsColor;
-        ctx.fill();            
-    }
+    
     
     /* tabview.js */
     if(tabview) {
@@ -130,30 +83,8 @@ window.onload = function() {
             })
         });
     }
-
-    /* mapper.js */
-    if('content' in document.createElement('template')) {
-        var t = document.querySelector('#teki');
-        var place = document.querySelector('ul.list');
-        var dummydata = [
-            {"memberpkey": 1, "membername":"강기윤", "dname":"경남 창원시 성산구"},
-            {"memberpkey": 2, "membername":"강대식", "dname":"대구 동구을"},
-            {"memberpkey": 3, "membername":"강득구", "dname":"경남 창원시 성산구"},
-            {"memberpkey": 4, "membername":"강민국", "dname":"경남 창원시 성산구"}]
-        for (i=0;i<5;i++) {
-            var clone = document.importNode(t.content, true);
-
-            mname = clone.querySelector('.name');
-            mname.innerText = dummydata[i].membername;
-
-            img = clone.querySelector('img');
-            img.src = `../img/member/member_${dummydata[i].memberpkey}.jpg`;
-
-            dname = clone.querySelector('.district');
-            dname.innerText = dummydata[i].dname;
-
-            place.appendChild(clone);
-        };
-    }
+    
 }
+
+
 

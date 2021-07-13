@@ -29,6 +29,13 @@ header .container .titleBox .title { font-weight: bold; font-size: 18px; line-he
 header .container .toolBox {display: flex; justify-content: flex-end; align-items: center;}
 header .container .toolBox img { width: 24px; height: 24px;}
 header .container .toolBox img:not(:last-child) {margin-right: 10px;}
+header .container .searchBox { display: none; }
+
+/* HEADER - SEARCH MODE */
+header.search .container { justify-content: flex-start; }
+header.search .container .titleBox {display: none;}
+header.search .container .toolBox img:not(.iconSearch) { display: none;}
+header.search .container .searchBox { display: flex; justify-content: flex-start; align-items: center; border: 1px solid var(--light-color); width: 100%; height: 30px; padding: 4px;}
 
 /* PARTY GRADIANT */
 .party-1 { background-color: var(--party-color-1) }
